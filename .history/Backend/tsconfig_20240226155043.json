@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "lib": [
+      "ES6",
+      "DOM"
+    ],
+    "types":["node"],
+    "module": "commonjs",
+    "rootDir": "src",
+    "baseUrl": "./",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "outDir": "build",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "moduleResolution": "Node",
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "@types"
+    ],
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "./public/*",
+    "node_modules"
+  ]
+}
