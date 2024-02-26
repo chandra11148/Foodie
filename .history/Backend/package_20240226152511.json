@@ -1,6 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "npx nodemon",
@@ -51,6 +52,5 @@
     "@types/passport": "^1.0.16",
     "@types/passport-jwt": "^4.0.1",
     "@types/sharp": "^0.32.0"
-  },
-  "description": ""
+  }
 }
