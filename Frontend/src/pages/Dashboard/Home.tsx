@@ -5,10 +5,7 @@ import { NoRecipe } from "./common";
 import { IRECIPERESPONSE } from "../../@types";
 import { useRecipe } from "../../hooks";
 import { instance } from "../../config";
-
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-// import cogoToast from "cogo-toast";
+import cogoToast from "cogo-toast";
 import { SearchLoader, UILoader } from "../../components/loaders";
 
 export const Home = () => {
@@ -21,8 +18,7 @@ export const Home = () => {
     const [state,setState] = useState<IRECIPERESPONSE[]>(data as unknown as IRECIPERESPONSE[] | []);
     if(error){
         console.log(error);
-        // cogoToast.error(error?.response?.data?.error);
-        toast.error(error?.response?.data?.error);
+        cogoToast.error(error?.response?.data?.error);
         return null;
     }
     const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -50,7 +46,7 @@ export const Home = () => {
           <SearchLoader />
         ) : (
           <>
-            {state?.length ? (
+            {!!state?.length ? (
               <div className="flex flex-wrap gap-3 flex-col items-center justify-center md:justify-start md:items-start md:flex-row w-full">
                 {state.map((recipe: IRECIPERESPONSE, index: number) => (
                   <RecipeCard

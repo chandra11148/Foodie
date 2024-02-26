@@ -1,6 +1,6 @@
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
+import cogoToast from "cogo-toast";
 
 export const instance = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL_DEV,
@@ -26,8 +26,7 @@ instance.interceptors.response.use(
   (error) => {
     if (error.response.status === 401) {
       sessionStorage.clear();
-      // cogoToast.warn("Session timed out");
-      toast.warn("Session timed out");
+      cogoToast.warn("Session timed out");
       window.location.href = "/";
     }
     return Promise.reject(error);
@@ -40,7 +39,7 @@ instance.interceptors.response.use(
       if (response.data.message === "" || response.data.message === undefined) {
         console.log("");
       } else {
-        toast.success(response.data.message);
+        cogoToast.success(response.data.message);
       }
     }
     console.log(response);
@@ -51,8 +50,8 @@ instance.interceptors.response.use(
       return;
     }
     if (error.response.status >= 500) {
-      return toast.error(
-        error.response.data.error
+      return cogoToast.error(
+        !!error.response.data.error
           ? error.response.data.error
           : "check your internet connection"
       );

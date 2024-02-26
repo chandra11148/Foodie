@@ -1,7 +1,4 @@
-
-// import toast from "cogo-toast";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import cogoToast from "cogo-toast";
 import React, { Suspense } from "react";
 import { useParams } from "react-router-dom";
 import { Card } from "../../components";
@@ -17,7 +14,7 @@ export const More = () => {
 
   if (error) {
     console.log(error);
-    toast.error(error?.response?.data?.error);
+    cogoToast.error(error?.response?.data?.error);
     return null;
   }
 
