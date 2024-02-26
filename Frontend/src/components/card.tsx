@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import  { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { IRECIPEUSER } from "../@types";
 import { Button } from "./button";
@@ -24,6 +24,7 @@ export const RecipeCard = ({
       ingredients={ingredients}
       description={description}
       email={user}
+      note={note}
       avatar="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
     >
       <div className="flex justify-end">

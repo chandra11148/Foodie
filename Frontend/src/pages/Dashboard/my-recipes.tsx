@@ -1,5 +1,7 @@
 import React, { useState, FormEvent, Suspense, useContext } from "react";
 import useSWR from "swr";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-expect-error
 import cogoToast from "cogo-toast";
 
 import { RecipeCard, SearchBox } from "../../components";
@@ -53,13 +55,13 @@ export const MyRecipes = () => {
           onSearch={handleSearch}
           setQuery={setQuery}
           query={query}
-          disabled={!data?.length}
+          
         />
         {loading ? (
           <SearchLoader />
         ) : (
           <>
-            {!!state?.length ? (
+            {state?.length ? (
               <div className="flex flex-wrap gap-3 flex-col md:flex-row w-ful">
                 {state.map((recipe: IRECIPERESPONSE, index: number) => (
                   <RecipeCard

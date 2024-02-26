@@ -5,6 +5,8 @@ import { NoRecipe } from "./common";
 import { IRECIPERESPONSE } from "../../@types";
 import { useRecipe } from "../../hooks";
 import { instance } from "../../config";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-expect-error
 import cogoToast from "cogo-toast";
 import { SearchLoader, UILoader } from "../../components/loaders";
 
@@ -46,7 +48,7 @@ export const Home = () => {
           <SearchLoader />
         ) : (
           <>
-            {!!state?.length ? (
+            {state?.length ? (
               <div className="flex flex-wrap gap-3 flex-col items-center justify-center md:justify-start md:items-start md:flex-row w-full">
                 {state.map((recipe: IRECIPERESPONSE, index: number) => (
                   <RecipeCard

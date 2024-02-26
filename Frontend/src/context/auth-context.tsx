@@ -24,8 +24,8 @@ export const AuthenticationContextProvider = ({
   const onLogin = async (payload: {
     email: string;
     password: string;
-  }): Promise<any> => {
-    const response: ILOGINRESPONSE = await login(payload);
+  }): Promise<unknown> => {
+    const response: ILOGINRESPONSE | void = await login(payload);
     if (response) {
       sessionStorage.setItem("token", response?.token);
       sessionStorage.setItem("email", response?.email);
@@ -36,7 +36,7 @@ export const AuthenticationContextProvider = ({
     }
   };
 
-  const onLogout = (): any => {
+  const onLogout = (): unknown => {
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("email");
     sessionStorage.removeItem("id");

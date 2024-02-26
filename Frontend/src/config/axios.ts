@@ -1,4 +1,6 @@
 import axios from "axios";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-expect-error
 import cogoToast from "cogo-toast";
 
 export const instance = axios.create({

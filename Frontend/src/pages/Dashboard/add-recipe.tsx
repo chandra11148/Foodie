@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-expect-error
 import cogoToast from "cogo-toast";
 import React, { DragEvent, FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
