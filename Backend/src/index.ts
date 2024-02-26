@@ -12,7 +12,12 @@ import fileUpload from "express-fileupload";
 
 
 const app:Application = express();
-app.use(cors());
+app.use(cors({
+    origin: `https://foodie-ivory-nu.vercel.app/`,
+    allowedHeaders: "Origin, X-Requested-With, Content-Type, Accept",
+    credentials: true,
+  })
+ );
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
