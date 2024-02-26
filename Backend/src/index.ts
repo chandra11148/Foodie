@@ -12,16 +12,10 @@ import fileUpload from "express-fileupload";
 
 
 const app:Application = express();
-
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-app.use(cors(
-    {
-        origin:["https://foodiee-three.vercel.app/"],
-        methods:["POST","GET"],
-        credentials:true
-    }
-));
+
 app.use(helmet());
 
 app.use(fileUpload({

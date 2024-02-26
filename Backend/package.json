@@ -6,7 +6,7 @@
     "dev": "npx nodemon",
     "start": "npm run build && node ./build/index.js",
     "build": "rimraf ./build && tsc",
-    "vercel-build":"echo hello",
+    "vercel-build": "echo hello",
     "lint": "npx eslint --ignore-path .gitignore --ext .js,.ts --fix",
     "format": "npx prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
   },
