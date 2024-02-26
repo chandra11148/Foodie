@@ -4,9 +4,10 @@ import { Form, Input, Button } from "../../components";
 import { AUTH_TYPE, IPAYLOAD } from "../../@types";
 import { validateEmail } from "../../utils";
 import { AuthenticationContext } from "../../context";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-expect-error
-import cogoToast from "cogo-toast";
+// import cogoToast from "cogo-toast";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
 
 export const Landing = () => {
@@ -27,10 +28,12 @@ export const Landing = () => {
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if(!validateEmail(state?.email)){
-            return cogoToast.error("Invalid email");
+            // return cogoToast.error("Invalid email");
+            return toast.error("Invalid email");
         }
         if(!state?.password || state.password.length < 7){
-            return cogoToast.error("Please provide password");
+            // return cogoToast.error("Please provide password");
+            return toast.error("Please provide passwod");
         }
         await onLogin(state);
   };

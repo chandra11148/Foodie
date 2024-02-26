@@ -1,6 +1,7 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-expect-error
-import cogoToast from "cogo-toast";
+
+// import toast from "cogo-toast";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import React, { DragEvent, FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Form, Input, TextArea } from "../../components";
@@ -31,7 +32,7 @@ export const AddRecipe = () => {
     let imageFile = event.dataTransfer.files[0];
 
     if (!validateImageType(imageFile)) {
-      return cogoToast.warn("File type is wrong" + imageFile.type);
+      return toast.warn("File type is wrong" + imageFile.type);
     }
 
     setImage(imageFile);
@@ -41,7 +42,7 @@ export const AddRecipe = () => {
     if (!event.currentTarget.files) return;
     const imageFile = event.currentTarget.files[0];
     if (!validateImageType(imageFile)) {
-      return cogoToast.warn("File type is wrong" + imageFile.type);
+      return toast.warn("File type is wrong" + imageFile.type);
     }
 
     setImage(imageFile);
@@ -51,11 +52,11 @@ export const AddRecipe = () => {
     e.preventDefault();
 
     if (!image) {
-      return cogoToast.error("Please add an image");
+      return toast.error("Please add an image");
     }
 
     if (!state?.title || !state?.description || !state?.ingredients) {
-      return cogoToast.error("Please fill the missing field");
+      return toast.error("Please fill the missing field");
     }
     const payload = {
       image,

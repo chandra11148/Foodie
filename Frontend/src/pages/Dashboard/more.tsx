@@ -1,6 +1,7 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-expect-error
-import cogoToast from "cogo-toast";
+
+// import toast from "cogo-toast";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import React, { Suspense } from "react";
 import { useParams } from "react-router-dom";
 import { Card } from "../../components";
@@ -16,7 +17,7 @@ export const More = () => {
 
   if (error) {
     console.log(error);
-    cogoToast.error(error?.response?.data?.error);
+    toast.error(error?.response?.data?.error);
     return null;
   }
 

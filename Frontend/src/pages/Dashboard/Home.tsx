@@ -5,9 +5,10 @@ import { NoRecipe } from "./common";
 import { IRECIPERESPONSE } from "../../@types";
 import { useRecipe } from "../../hooks";
 import { instance } from "../../config";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-expect-error
-import cogoToast from "cogo-toast";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+// import cogoToast from "cogo-toast";
 import { SearchLoader, UILoader } from "../../components/loaders";
 
 export const Home = () => {
@@ -20,7 +21,8 @@ export const Home = () => {
     const [state,setState] = useState<IRECIPERESPONSE[]>(data as unknown as IRECIPERESPONSE[] | []);
     if(error){
         console.log(error);
-        cogoToast.error(error?.response?.data?.error);
+        // cogoToast.error(error?.response?.data?.error);
+        toast.error(error?.response?.data?.error);
         return null;
     }
     const onSubmit = async (e: FormEvent<HTMLFormElement>) => {

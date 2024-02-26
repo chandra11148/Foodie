@@ -1,8 +1,9 @@
 import React, { useState, FormEvent, Suspense, useContext } from "react";
 import useSWR from "swr";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-expect-error
-import cogoToast from "cogo-toast";
+
+// import cogoToast from "cogo-toast";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { RecipeCard, SearchBox } from "../../components";
 import { instance } from "../../config";
@@ -28,7 +29,7 @@ export const MyRecipes = () => {
 
   if (error) {
     console.log(error);
-    cogoToast.error(error?.response?.data?.error);
+    toast.error(error?.response?.data?.error);
     return null;
   }
 
