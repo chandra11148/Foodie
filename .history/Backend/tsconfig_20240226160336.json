@@ -20,9 +20,9 @@
     "types": [
       "node"
     ],
-    // "typeRoots": [
-    //   "@types"
-    // ],
+    "typeRoots": [
+      "@types"
+    ],
   },
   "include": [
     "./src/**/*"
