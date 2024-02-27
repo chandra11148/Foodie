@@ -8,7 +8,8 @@
     "build": "rimraf ./build && tsc",
     "vercel-build": "echo hello",
     "lint": "npx eslint --ignore-path .gitignore --ext .js,.ts --fix",
-    "format": "npx prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
+    "format": "npx prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+    "rimraf": "./node_modules/rimraf/bin.js"
   },
   "keywords": [],
   "author": "",
