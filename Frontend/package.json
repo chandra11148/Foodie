@@ -12,6 +12,7 @@
   "dependencies": {
     "@types/react-toastify": "^4.1.0",
     "axios": "^1.6.7",
+    "cogo-toast": "^4.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
@@ -21,7 +22,6 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
-
     "@types/react-dom": "^18.2.19",
     "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
