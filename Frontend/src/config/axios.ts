@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import cogoToast from "cogo-toast";
+// import cogoToast from "cogo-toast";
 
 export const instance = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL_DEV,
@@ -26,7 +26,7 @@ instance.interceptors.response.use(
   (error) => {
     if (error.response.status === 401) {
       sessionStorage.clear();
-      cogoToast.warn("Session timed out");
+      // cogoToast.warn("Session timed out");
       window.location.href = "/";
     }
     return Promise.reject(error);
@@ -39,7 +39,7 @@ instance.interceptors.response.use(
       if (response.data.message === "" || response.data.message === undefined) {
         console.log("");
       } else {
-        cogoToast.success(response.data.message);
+        // cogoToast.success(response.data.message);
       }
     }
     console.log(response);
@@ -50,11 +50,11 @@ instance.interceptors.response.use(
       return;
     }
     if (error.response.status >= 500) {
-      return cogoToast.error(
-        !!error.response.data.error
-          ? error.response.data.error
-          : "check your internet connection"
-      );
+      // return cogoToast.error(
+      //   !!error.response.data.error
+      //     ? error.response.data.error
+      //     : "check your internet connection"
+      // );
     }
     return Promise.reject(error);
   }
