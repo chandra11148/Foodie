@@ -16,7 +16,7 @@
 
 ## Live Demo ☁️
 
-[Live Demo Link]()
+[Live Demo Link](https://foodie-frontend-sigma.vercel.app/)
 
 ## Getting Started ☀️
 
